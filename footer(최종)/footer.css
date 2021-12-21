@@ -1,0 +1,42 @@
+/* footer시작 */
+
+.footer {
+    padding: 80px 0 32px;
+}
+.footer_link {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+}
+.footer_item {
+    margin: 0 10px;
+}
+.footer_copy {
+    width: 553px;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.footer_logo {
+    display: inline-block;
+    /* 보여줄 이미지 크기 */
+    width: 70px;
+    height: 15px;
+    background-image: url(../images/projectlogo.png);
+    background-size: 245px 95px;
+    /* 본 이미지 크기 */
+    background-position: 0 -51px;
+}
+
+.footer_copy>.text {
+    color: #888;
+    font-weight: 800;
+}
+
+.footer_copy img {
+    margin-bottom: 10px;
+}
+
+
+/* 끝 */

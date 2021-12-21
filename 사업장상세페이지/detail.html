@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css" integrity="sha512-4wfcoXlib1Aq0mUtsLLM74SZtmB73VHTafZAvxIp/Wk9u1PpIsrfmTvK0+yKetghCL8SHlZbMyEcV8Z21v42UQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="detail.css" rel="stylesheet">
+    <script type="text/javascript" src="detail.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    
+
+
+</head>
+
+<body>
+    <section class="hamburger_section">
+        <div class="hamburger_list">
+            <ul class="search_list awe">
+                <li>공지사항</li>
+                <li>식당검색</li>
+            </ul>
+        </div>
+    </section>
+    <section class="header_section">
+        <div class="header_part">
+            <div class="hamburger_icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <img src="/이미지/logo.png ">
+            <ul class="gnb">
+                <li>
+                    <a href="로그인페이지이동">Login</a>
+                </li>
+                <li>
+                    <a href="#">Join</a>
+                </li>
+                <li>
+                    <a href="#">Favorite</a>
+                </li>
+                <li>
+                    <a href="#">Mypage</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="rest_section">
+        <image src="/이미지/식당사진/그린팬트리/cff999f3bed407941b0842b4b6463a8a_w800.jpg" class="main_image" style="width: 600px;" style="height: 400px;">
+            <i class="fas fa-map-marker-alt hamburger_btn"></i>
+        </image>
+        <div class="rest_detail">
+            <p>식당이름</p>
+            <p>★4.5</p>
+            <span>(45)</span>
+            <p>09 : 00 ~ 18 : 00</p>
+            <p>010-0000-0000</p>
+            <textarea cols="50" rows="10">하고싶은말</textarea>
+            <input type="button" value="예약하기" class="reserve_btn">
+        </div>
+    </section>
+    <section class="menu_section">
+        <div class="menu_title">메뉴</div>
+        <ul class="menu_list">
+            <li>
+                <i class="fas fa-chevron-left"></i>
+            </li>
+            <li>
+                <img src="/이미지/양식/steak.jpeg" style="width: 250px; height: 250px;">
+                <p>메뉴이름</p>
+                <p>15,000</p>
+            </li>
+            <li>
+                <img src="/이미지/양식/pizza.jpeg" style="width: 250px; height: 250px;">
+                <p>메뉴이름</p>
+                <p>15,000</p>
+            </li>
+            <li>
+                <img src="/이미지/양식/salad1.jpeg" style="width: 250px; height: 250px;">
+                <p>메뉴이름</p>
+                <p>15,000</p>
+            </li>
+            <li>
+                <i class="fas fa-chevron-right"></i>
+            </li>
+        </ul>
+    </section>
+    <section class="review_section">
+        <div class="review_title">추천 리뷰
+            <a href="">
+                <span>모두보기 ></span>
+            </a>
+        </div>
+        <div class="review_aver">
+            <span>★4.0
+                <span class="total_review">(10)</span>
+            </span>
+        </div>
+        <ul class="review_list">
+            <li>
+                <a href="">
+                    <img src="/이미지/양식/steak2.jpeg" width="300px" height="100%" class="review">
+                    <div class="review_content">
+                        <span>작성자</span>
+                        <span>★4.0</span>
+                        <p>2021.12.08</p>
+                        <p>오늘은 마라탕을 태어나서 처음 먹었다 맛있었다 또 먹을거다</p>
+                    </div>
+                </a>
+            </li>
+            <li style="height: 300px;">
+                <a href="">
+                    <img src="/이미지/양식/salad1.jpeg" width="300px" height="100%" class="review">
+                    <div class="review_content">
+                        <span>작성자</span>
+                        <span>★4.0</span>
+                        <p>2021.12.08</p>
+                        <p>오늘은 마라탕을 태어나서 처음 먹었다 맛있었다 또 먹을거다</p>
+                    </div>
+                </a>
+            </li>
+            <li style="height: 300px;">
+                <a href="">
+                    <img src="/이미지/양식/pizza.jpeg" width="300px" height="100%" class="review">
+                    <div class="review_content">
+                        <span>작성자</span>
+                        <span>★4.0</span>
+                        <p>2021.12.08</p>
+                        <p>오늘은 마라탕을 태어나서 처음 먹었다 맛있었다 또 먹을거다</p>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+
+    </section>
+    <section class="picture_section">
+        <!-- 해당 이미지를 누르면 해당 리뷰로 이동한다 -->
+        <div class="picture_title">사진</div>
+        <table class="image_table">
+            <tbody class="review_image_table">
+                <tr>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/chicken.jpeg" width="200px" height="200px" class="review_image_header">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/hamburger1.jpeg" width="200px" height="200px">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/pasta2.jpeg" width="200px" height="200px">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/salad2.jpeg" width="200px" height="200px" class="review_image_footer">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/steak3.jpeg" width="200px" height="200px" class="review_image_header">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/stew.jpeg" width="200px" height="200px">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/steak2.jpeg" width="200px" height="200px">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                            <img src="/이미지/양식/pizza3.jpeg" width="200px" height="200px" class="review_image_footer">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="icon_section">
+        <div class="icon_title"></div>
+        <table class="icon_table">
+            <tbody>
+                <tr>
+                    <td>
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <p>콜키지 가능</p>
+                    </td>
+                    <td>
+                        <i class="fas fa-moon"></i>
+                        <p>심야 영업</p>
+                    </td>
+                    <td>
+                        <i class="fas fa-baby"></i>
+                        <p>아기의자</p>
+                    </td>
+                    <td>
+                        <i class="fas fa-users"></i>
+                        <p>단체석</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-parking"></i>
+                        <p>주차 가능</p>
+                    </td>
+                    <td>
+                        <i class="fas fa-wifi"></i>
+                        <p>무료 와이파이</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="bottom">
+        <div class="wrap">
+            <div class="footer">
+                <div class="footer_inner">
+                    <ul class="footer_link">
+                        <li><a href="#" target="_blank" class="footer_item">이용약관&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">개인정보처리방침&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">책임의 한계와 법적고지&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">회원정보 고객센터</a></li>
+                    </ul>
+                    
+                    <div class="footer_copy">
+                        <div>
+                            <a href="#" target="_blank" class="footer_logo">
+                                <img src="/이미지/logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <span class="text">Copyright</span>
+                        <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link href="header.css" rel="stylesheet">
+    <script type="text/javascript" src="header.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            fnhover();
+            fnQuickMenu();
+
+
+
+        });
+
+        function fnQuickMenu() {
+            var currentPosition = parseInt($(".quickmenu").css("top"));
+            $(window).scroll(function() {
+                var position = $(window).scrollTop();
+                $(".quickmenu").stop().animate({
+                    "top": position + currentPosition + "px"
+                }, 1000);
+            });
+
+        }
+
+        function fnhover() {
+            (function($) {
+                $('.cate ul').hide();
+                $('.cate .menu .subopen').click(function() {
+                    if ($(this).hasClass('active')) {
+                        $(this).parent().next().slideUp('slow');
+                        $(this).removeClass('active');
+                    } else {
+                        $('.accordion').find('.active').parent().next().slideUp('slow');
+                        $('.accordion').find('.active').removeClass('active');
+                        $(this).parent().next().slideDown('slow');
+                        $(this).addClass('active');
+                    }
+                });
+            })(jQuery);
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="index.html">
+                    <img src="/이미지/logo.png ">
+                </a>
+            </h1>
+            <ul id="gnb">
+                <li><a href="사용자페이지이동">LOGIN&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="호스트로그인페이지이동">HOSTLOGIN</a></li>
+                <li><a href="회원가입페이지이동">JOIN</a></li>
+                <li><a href="찜목록페이지">FAVORITE</a></li>
+                <li><a href="마이페이지이동">MYPAGE</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="accordion">
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Reservation</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
+                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu"> 
+                <a href="#" class="menulink">Board</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="리뷰"> 리뷰 </a></li>
+                <li><a href="리뷰"> Q&A </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Magazines</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li>다이닝 매거진</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

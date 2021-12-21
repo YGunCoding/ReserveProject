@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link href="reviewList.css" rel="stylesheet">
+    <script type="text/javascript" src="reviewList.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="index.html">
+                    <img src="/이미지/logo.png ">
+                </a>
+            </h1>
+            <ul id="gnb">
+                <li><a href="사용자페이지이동">LOGIN&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="호스트로그인페이지이동">HOSTLOGIN</a></li>
+                <li><a href="회원가입페이지이동">JOIN</a></li>
+                <li><a href="찜목록페이지">FAVORITE</a></li>
+                <li><a href="마이페이지이동">MYPAGE</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="accordion">
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Reservation</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
+                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu"> 
+                <a href="#" class="menulink">Board</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="리뷰"> 리뷰 </a></li>
+                <li><a href="리뷰"> Q&A </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Magazines</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li>다이닝 매거진</li>
+            </ul>
+        </div>
+    </div>
+    <section class="review_aver_section">
+        <div class="review_detail">
+            <p><span>(식당이름)</span>에 대한 <span>00개</span>의 리뷰가 있습니다.</p>
+            <p>평균 리뷰 점수</p>
+            <p>★4.5</p>
+        </div>
+    </section>
+    <section class="review_section">
+        <div class="review_box">
+            <ul class="reviews">
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/chobob.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/tendong1.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/delicious.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/ramen.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~맛있어요~맛있어요~맛있어요~맛있어요~맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="reviews">
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/wooding.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~맛있어요~맛있어요~맛있어요~맛있어요~맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/nabae.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="rest_review" style="height: 360px;">
+                        <img src="/이미지/일식/boiledeel1.jpeg" width="250px" height="250px">
+                        <div>
+                            <div class="rest_writer_info">
+                                <span>(닉네임)</span>
+                                <span>2021.12.22</span>
+                                <p>★4.5</p>
+                            </div>
+                            <div class="rest_review_content">
+                                <p class="content">맛있어요~</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="rest_pagging">
+                여기에 ajax로 페이징처리하면 될거같습니다
+            </div>
+        </div>
+    </section>
+    <section class="all_review_section">
+        <div class="all_review_comment">
+            <img src="/이미지/logo.png">의
+            <span>총 리뷰가</span>
+            <span>00</span>
+            <span>개 있습니다!</span>
+        </div>
+        <div class="all_review_list">
+            <div class="all_review_case">
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+                <div class="a">
+                    <div class="all_rest_info">
+                        <img src="/이미지/식당사진/소풍(분식집)/995E323F5CBA76FD08.jpg" width="250px" height="250px">
+                        <div>
+                            <p class="rest_name">식당이름</p>
+                            <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="writer_name">작성자</span>
+                            <span class="writer_score">★★★★★</span>
+                            <span class="writer_date">2021.08.18</span>
+                        </div>
+                        <div class="all_content">
+                            맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요맛없어요 다시는 안와요
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="all_review_pagging">
+            <p>이곳에 페이징처리하면 될거같습니다</p>
+        </div>
+    </section>
+    <section id="bottom">
+        <div class="wrap">
+            <div class="footer">
+                <div class="footer_inner">
+                    <ul class="footer_link">
+                        <li><a href="#" target="_blank" class="footer_item">이용약관&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">개인정보처리방침&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">책임의 한계와 법적고지&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">회원정보 고객센터</a></li>
+                    </ul>
+                    <div class="footer_copy">
+                        <a href="#" target="_blank">
+                            <img src="/이미지/logo.png" alt="logo">
+                        </a>
+                        <span class="text">Copyright</span>
+                        <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+
+</html>
