@@ -1,46 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        h1 {
+            width: 500px;
+            margin: 0 auto;
+            padding-top: 150px;
+            padding-bottom: 100px;
+            font-size: 50px;
+            text-align: center;
+        }
+        
+        .go {
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+        
+        .admin {
+            display: flex;
+        }
+        
         .admin_user {
-            display: inline-block;
+            width: 300px;
+            height: 300px;
             border: 1px solid black;
-            width: 50%;
-            height: 50%;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            line-height: 250px;
+            font-size: 30px;
         }
+        
         .admin_rest {
-            display: inline-block;
+            width: 300px;
+            height: 300px;
             border: 1px solid black;
-            width: 50%;
-            height: 50%;
+            margin-bottom: 30px;
+            line-height: 250px;
+            font-size: 30px;
         }
-        .admin_main_go {
+        
+        .go_mainPage {
+            width: 630px;
+            height: 130px;
             border: 1px solid black;
-            width: 100%;
-            height: 50%;
+            line-height: 70px;
+            font-size: 30px;
         }
-
     </style>
 </head>
+
 <body>
     <h1>관리자 전용 페이지</h1>
-    <div class="admin_box">
-        <div class="admin_user">
-            <p>회원관리</p>
+    <div class="go">
+        <div class="admin">
+            <div class="admin_user">
+                <p>회원 관리</p>
+            </div>
+            <div class="admin_rest">
+                <p>식당 관리</p>
+            </div>
         </div>
-        <div class="admin_rest">
-            <p>식당관리</p>
-        </div>
-        <div class="admin_main_go">
-            <p>메인페이지로 이동</p>
+        <div class="go_mainPage">
+            <p>메인 페이지 이동</p>
         </div>
     </div>
-    
 
 
 </body>
+
 </html>
