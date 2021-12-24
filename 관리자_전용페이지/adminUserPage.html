@@ -2,102 +2,11 @@
 <html lang="ko">
 
 <head>
+    <link href="adminUserPage.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* 초기화시작 */
-        
-        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        li {
-            list-style: none;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        img {
-            vertical-align: top;
-        }
-        
-        body {
-            font-family: 'nanumsquare';
-        }
-        
-        .wrap {
-            width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .wrap:after,
-        ul:after,
-        .cl:after,
-        a:after {
-            content: "";
-            clear: both;
-            display: block;
-        }
-        
-        .blind {
-            position: absolute;
-            left: -9999px;
-            width: 0;
-            height: 0;
-            font-size: 0;
-            overflow: hidden;
-        }
-        /* 초기화끝 */
-        /* 헤더시작 */
-        
-        header {
-            height: 120px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background-color: white;
-            border-bottom: 1px solid silver;
-            box-shadow: 0 1px 2px lightgray;
-            margin: 0 auto;
-        }
-        
-        header h1 {
-            padding: 25px 0;
-        }
-        
-        header #gnb {
-            position: absolute;
-            right: 0;
-            top: 50px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        header #gnb li {
-            float: left;
-            margin-right: 20px;
-        }
-        
-        header #gnb li:last-child {
-            margin-right: 0;
-        }
-        /* 헤더끝 */
-        
-        .menu {
-            margin-top: 300px;
-        }
-    </style>
 </head>
 
 <body>
@@ -109,24 +18,62 @@
                 </a>
             </h1>
             <ul id="gnb">
-                <li><a href="사용자페이지이동">LOGIN&nbsp;&nbsp;&nbsp;/</a></li>
-                <li><a href="호스트로그인페이지이동">HOSTLOGIN</a></li>
-                <li><a href="회원가입페이지이동">JOIN</a></li>
-                <li><a href="찜목록페이지">FAVORITE</a></li>
-                <li><a href="마이페이지이동">MYPAGE</a></li>
+                <li>${loginUser.id} 님 환영합니다</li>
+                <li><a href="로그아웃">LOGOUT&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="/restaurant/user/myPage">MYPAGE&nbsp;&nbsp;&nbsp;</a></li>
             </ul>
         </div>
     </header>
-    <section class="menu">
-        <p>회원 검색</p>
-        <select>
-            <option>지역</option>
-            <option>이름</option>
-            <option>나이</option>
-            <option>등급</option>
-        </select>
-        <input type="text">
-        <input type="button" value="검색">
+    <section class="search_section">
+        <p class="user_search">회원 검색</p>
+        <div class="chose">
+            <select class="select_chose">
+                <option>선택</option>
+                <option>아이디</option>
+                <option>이름</option>
+                <option>전화번호</option>
+                <option>등급</option>
+            </select>
+            <input type="text" class="select_text">
+            <input type="button" value="검색" class="search_btn">
+        </div>
+    </section>
+    <section class="result_section">
+        <table class="result_table">
+            <thead>
+                <tr>
+                    <td>회원번호</td>
+                    <td>아이디</td>
+                    <td>이름</td>
+                    <td>상태</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>java</td>
+                    <td>
+                        <a href="">자바</a>
+                    </td>
+                    <td>예약중</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>spring</td>
+                    <td>
+                        <a href="">스프링</a>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </section>
 
 </body>
