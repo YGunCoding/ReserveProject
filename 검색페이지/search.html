@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script type="text/javascript" src="search.js"></script>
+    <link href="search.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css" integrity="sha512-4wfcoXlib1Aq0mUtsLLM74SZtmB73VHTafZAvxIp/Wk9u1PpIsrfmTvK0+yKetghCL8SHlZbMyEcV8Z21v42UQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="index.html">
+                    <img src="/이미지/logo.png ">
+                </a>
+            </h1>
+            <ul id="gnb">
+                <li><a href="사용자페이지이동">LOGIN&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="호스트로그인페이지이동">HOSTLOGIN</a></li>
+                <li><a href="회원가입페이지이동">JOIN</a></li>
+                <li><a href="찜목록페이지">FAVORITE</a></li>
+                <li><a href="마이페이지이동">MYPAGE</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="accordion">
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Reservation</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
+                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu"> 
+                <a href="#" class="menulink">Board</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="리뷰"> 리뷰 </a></li>
+                <li><a href="리뷰"> Q&A </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Magazines</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li>다이닝 매거진</li>
+            </ul>
+        </div>
+    </div>
+    <section class="search_section">
+        <form id="search_form">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="식당이름 / 지역(OO구 or OO동)" class="search_area">
+            <button class="search_btn">검색</button>
+        </form>
+    </section>
+    <section class="list_section">
+        <div class="rest_info">
+            <div>
+                <img src="/이미지/식당사진/중식집2/c0118280_50a2660a59dfb.jpeg" class="rest_img">
+            </div>
+            <div>
+                <span class="rest_name">식당이름</span>
+                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
+                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
+                <button class="copy_address">
+                    <i class="far fa-copy"></i>복사
+                </button>
+                <p class="rest_tel">010 - 0000 - 0000</p>
+                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
+            </div>
+        </div>
+        <div class="rest_info">
+            <div>
+                <img src="/이미지/식당사진/중식집2/c0118280_50a267a8c1bec.jpeg" class="rest_img">
+            </div>
+            <div>
+                <span class="rest_name">식당이름</span>
+                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
+                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
+                <button class="copy_address">
+                    <i class="far fa-copy"></i>복사
+                </button>
+                <p class="rest_tel">010 - 0000 - 0000</p>
+                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
+            </div>
+        </div>
+        <div class="rest_info">
+            <div>
+                <img src="/이미지/식당사진/카메/136e81d2005c7f6b6b578caf6158383f_w800.jpg" class="rest_img">
+            </div>
+            <div>
+                <span class="rest_name">식당이름</span>
+                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
+                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
+                <button class="copy_address">
+                    <i class="far fa-copy"></i>복사
+                </button>
+                <p class="rest_tel">010 - 0000 - 0000</p>
+                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
+            </div>
+        </div>
+        <div class="rest_info">
+            <div>
+                <img src="/이미지/식당사진/키하야/IMAGE_201903211053567230_PmY2M.jpeg" class="rest_img">
+            </div>
+            <div>
+                <span class="rest_name">식당이름</span>
+                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
+                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
+                <button class="copy_address">
+                    <i class="far fa-copy"></i>복사
+                </button>
+                <p class="rest_tel">010 - 0000 - 0000</p>
+                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
+            </div>
+        </div>
+        <div class="rest_info">
+            <div>
+                <img src="/이미지/식당사진/호랑도/39a0f1c65ae61cec3067ac71b807260f_w800.jpg" class="rest_img">
+            </div>
+            <div>
+                <span class="rest_name">식당이름</span>
+                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
+                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
+                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
+                <button class="copy_address">
+                    <i class="far fa-copy"></i>복사
+                </button>
+                <p class="rest_tel">010 - 0000 - 0000</p>
+                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
+            </div>
+        </div>
+    </section>
+    <section id="bottom">
+        <div class="wrap">
+            <div class="footer">
+                <div class="footer_inner">
+                    <ul class="footer_link">
+                        <li><a href="#" target="_blank" class="footer_item">이용약관&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">개인정보처리방침&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">책임의 한계와 법적고지&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">회원정보 고객센터</a></li>
+                    </ul>
+                    <div class="footer_copy">
+                        <div>
+                            <a href="#" target="_blank" class="footer_logo">
+                                <img src="/이미지/logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <span class="text">Copyright</span>
+                        <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
