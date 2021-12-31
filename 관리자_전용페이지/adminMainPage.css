@@ -64,7 +64,7 @@ header {
     background-color: white;
     border-bottom: 1px solid silver;
     box-shadow: 0 1px 2px lightgray;
-    margin: 0 auto;
+    margin: 0 auto 200px;
 }
 
 header h1 {
@@ -95,7 +95,7 @@ header #gnb li:last-child {
     display: grid;
     place-items: center;
     text-align: center;
-    margin-top: 210px;
+    margin-top: 220px;
 }
 
 .admin {
@@ -105,26 +105,69 @@ header #gnb li:last-child {
 .admin_user {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    border-radius: 50px;
     margin-right: 30px;
     margin-bottom: 30px;
     line-height: 250px;
     font-size: 30px;
 }
 
+.admin_user:hover {
+    border: none;
+    background-color: lightgray;
+    font-size: 50px;
+    transition: 0.5s;
+    font-weight: 900;
+}
+
 .admin_rest {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    border-radius: 50px;
     margin-bottom: 30px;
     line-height: 250px;
     font-size: 30px;
 }
 
+.admin_rest:hover {
+    border: none;
+    background-color: lightgray;
+    font-size: 50px;
+    transition: 0.5s;
+    font-weight: 900;
+}
+
 .go_mainPage {
     width: 630px;
     height: 130px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
+    border-radius: 50px;
     line-height: 70px;
     font-size: 30px;
+}
+
+.go_mainPage:hover {
+    border: none;
+    background-color: lightgray;
+    font-size: 50px;
+    transition: 0.5s;
+    font-weight: 900;
+}
+
+.admin_go {
+    text-align: center;
+    line-height: 300px;
+}
+
+.main_go {
+    text-align: center;
+    line-height: 130px;
+}
+
+.admin_go_link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
