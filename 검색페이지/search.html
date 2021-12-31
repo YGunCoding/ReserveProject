@@ -11,6 +11,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        .search_comment {
+            border: 1px solid black;
+            width: 1000px;
+            height: 100px;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        
+        .comment {
+            font-size: 30px;
+            line-height: 100px;
+        }
+        
+        .paging {
+            margin-top: 20px;
+            height: 30px;
+        }
+        
+        .paging_area {
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,85 +96,29 @@
         </form>
     </section>
     <section class="list_section">
-        <div class="rest_info">
-            <div>
-                <img src="/이미지/식당사진/중식집2/c0118280_50a2660a59dfb.jpeg" class="rest_img">
+        <c:forEach var="restaurant" items="${resList}">
+            <div class="rest_info">
+                <div>
+                    <img src="/이미지/식당사진/중식집2/c0118280_50a2660a59dfb.jpeg" class="rest_img">
+                </div>
+                <div>
+                    <span class="rest_name">
+                        <a href="/restaurant/admin/goResDetail?resNo=${restaurant.resNo}">${restaurant.resName}</a>
+                    </span>
+                    <span class="rest_time">${restaurant.resOpenTime} ~ ${restaurant.resCloseTime}</span><br>
+                    <p class="rest_address">${restaurant.resAddress}&nbsp;${restaurant.resAddressDetail}</p>
+                    <input id="address" value="${restaurant.resAddress}&nbsp;${restaurant.resAddressDetail}" readonly>
+                    <input type="text" value="경기도 고양시 마상로 63번길 17(111동 301호)" class="qqq" readonly>
+                    <button class="copy_address">
+                        <i class="far fa-copy"></i>복사
+                    </button>
+                    <p class="rest_tel">${restaurant.resTel}</p>
+                    <p class="rest_option">${restaurant.resOption}</p>
+                </div>
             </div>
-            <div>
-                <span class="rest_name">식당이름</span>
-                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
-                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
-                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
-                <button class="copy_address">
-                    <i class="far fa-copy"></i>복사
-                </button>
-                <p class="rest_tel">010 - 0000 - 0000</p>
-                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
-            </div>
-        </div>
-        <div class="rest_info">
-            <div>
-                <img src="/이미지/식당사진/중식집2/c0118280_50a267a8c1bec.jpeg" class="rest_img">
-            </div>
-            <div>
-                <span class="rest_name">식당이름</span>
-                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
-                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
-                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
-                <button class="copy_address">
-                    <i class="far fa-copy"></i>복사
-                </button>
-                <p class="rest_tel">010 - 0000 - 0000</p>
-                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
-            </div>
-        </div>
-        <div class="rest_info">
-            <div>
-                <img src="/이미지/식당사진/카메/136e81d2005c7f6b6b578caf6158383f_w800.jpg" class="rest_img">
-            </div>
-            <div>
-                <span class="rest_name">식당이름</span>
-                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
-                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
-                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
-                <button class="copy_address">
-                    <i class="far fa-copy"></i>복사
-                </button>
-                <p class="rest_tel">010 - 0000 - 0000</p>
-                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
-            </div>
-        </div>
-        <div class="rest_info">
-            <div>
-                <img src="/이미지/식당사진/키하야/IMAGE_201903211053567230_PmY2M.jpeg" class="rest_img">
-            </div>
-            <div>
-                <span class="rest_name">식당이름</span>
-                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
-                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
-                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
-                <button class="copy_address">
-                    <i class="far fa-copy"></i>복사
-                </button>
-                <p class="rest_tel">010 - 0000 - 0000</p>
-                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
-            </div>
-        </div>
-        <div class="rest_info">
-            <div>
-                <img src="/이미지/식당사진/호랑도/39a0f1c65ae61cec3067ac71b807260f_w800.jpg" class="rest_img">
-            </div>
-            <div>
-                <span class="rest_name">식당이름</span>
-                <span class="rest_time">09 : 00 ~ 18 : 00</span><br>
-                <p class="rest_address">서울시 마포구 노고산동 123-123</p>
-                <input id="address" value="서울시 마포구 노고산동 123-123" readonly>
-                <button class="copy_address">
-                    <i class="far fa-copy"></i>복사
-                </button>
-                <p class="rest_tel">010 - 0000 - 0000</p>
-                <p class="rest_option">콜키지 가능, 주차 가능, 애기의자</p>
-            </div>
+        </c:forEach>
+        <div class="paging">
+            <p class="paging_area">여기는 페이징 처리하는 곳</p>
         </div>
     </section>
     <section id="bottom">

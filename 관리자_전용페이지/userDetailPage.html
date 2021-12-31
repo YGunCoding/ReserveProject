@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 초기화시작 */
+        
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            vertical-align: top;
+        }
+        
+        body {
+            font-family: 'nanumsquare';
+        }
+        
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .wrap:after,
+        ul:after,
+        .cl:after,
+        a:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        
+        .blind {
+            position: absolute;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+        
+        table {
+            padding: 0;
+            border: 0;
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 0;
+        }
+        /* 초기화끝 */
+        /* 헤더시작 */
+        
+        header {
+            height: 120px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: white;
+            border-bottom: 1px solid silver;
+            box-shadow: 0 1px 2px lightgray;
+            margin: 0 auto;
+        }
+        
+        header h1 {
+            padding: 25px 0;
+        }
+        
+        header #gnb {
+            position: absolute;
+            right: 0;
+            top: 50px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        header #gnb li {
+            float: left;
+            margin-right: 20px;
+        }
+        
+        header #gnb li:last-child {
+            margin-right: 0;
+        }
+        /* 헤더끝 */
+        /* footer시작 */
+        
+        .footer {
+            padding: 80px 0 32px;
+        }
+        
+        .footer_link {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            font-weight: 400;
+        }
+        
+        .footer_item {
+            margin: 0 10px;
+        }
+        
+        .footer_copy {
+            width: 553px;
+            margin: 10px auto 0;
+            text-align: center;
+        }
+        
+        .footer_logo {
+            display: inline-block;
+            /* 보여줄 이미지 크기 */
+            width: 70px;
+            height: 15px;
+            background-image: url(../images/projectlogo.png);
+            background-size: 245px 95px;
+            /* 본 이미지 크기 */
+            background-position: 0 -51px;
+        }
+        
+        .footer_copy>.text {
+            color: #888;
+            font-weight: 800;
+        }
+        
+        .footer_copy img {
+            margin-bottom: 10px;
+        }
+        
+        #bottom {
+            margin-top: 150px;
+        }
+        /* 끝 */
+        
+        .userInfo {
+            width: 1500px;
+            margin: 200px auto 30px;
+        }
+        
+        .userInfo>p {
+            margin-bottom: 30px;
+            font-size: 30px;
+            text-align: left;
+            padding-left: 300px;
+        }
+        
+        .userInfo_table {
+            width: 900px;
+            height: 250px;
+            padding: 10px;
+            border-spacing: 0 5px;
+            margin: 0 auto;
+        }
+        
+        .userInfo_table>tbody>tr>td:nth-of-type(1),
+        .userInfo_table>tbody>tr>td:nth-of-type(3) {
+            width: 150px;
+            padding-left: 10px;
+            font-size: 20px;
+            background-color: rgb(236, 236, 236);
+            border-bottom: 3px solid white;
+        }
+        
+        .userInfo_table>tbody>tr>td:nth-of-type(2),
+        .userInfo_table>tbody>tr>td:nth-of-type(4) {
+            width: 250px;
+            padding-left: 10px;
+            border-bottom: 3px solid rgb(236, 236, 236);
+        }
+        
+        .return_btn {
+            text-align: center;
+        }
+        
+        .btn {
+            width: 170px;
+            height: 40px;
+            font-size: 17px;
+            background-color: white;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+        }
+        
+        .btn:hover {
+            color: white;
+            background-color: lightgray;
+            transition: 0.4s;
+            border: none;
+            cursor: pointer;
+        }
+        /* 최근예약목록 테이블 시작 */
+        
+        .book_list {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .book_table {
+            width: 1000px;
+            height: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .book_table>thead>tr>td:nth-of-type(1) {
+            width: 150px;
+        }
+        
+        .book_table>thead>tr>td:nth-of-type(4) {
+            width: 300px;
+        }
+        
+        .book_table>tbody>tr>td:nth-of-type(3) {
+            width: 70px;
+        }
+        
+        .book_table>thead>tr>td {
+            height: 30px;
+            font-size: 20px;
+            border-bottom: 3px solid lightgray;
+            border-right: 3px solid lightgray;
+        }
+        
+        .book_table>thead>tr>td:last-of-type {
+            border-right: none;
+        }
+        
+        .book_table>tbody>tr>td {
+            border-right: 3px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+        
+        .book_table>tbody>tr>td:last-of-type {
+            border-right: none;
+        }
+        
+        .book_table>tbody>tr {
+            font-size: 14px;
+        }
+        
+        .book_time {
+            padding-left: 10px;
+        }
+        
+        tfoot>tr {
+            text-align: center;
+        }
+        
+        .paging_foot {
+            height: 35px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="index.html">
+                    <img src="/restaurant/resources/image/index/projectlogo.png">
+                </a>
+            </h1>
+            <ul id="gnb">
+                <li>${loginUser.id} 님 환영합니다</li>
+                <li><a href="로그아웃">LOGOUT&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="/restaurant/user/myPage">MYPAGE&nbsp;&nbsp;&nbsp;</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="userInfo">
+        <p>회원정보</p>
+        <table class="userInfo_table">
+            <tbody>
+                <tr>
+                    <td>회원번호</td>
+                    <td>${user.userNo}</td>
+                    <td>아이디</td>
+                    <td>${user.id}</td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td>${user.name}</td>
+                    <td>전화번호</td>
+                    <td>${user.tel}</td>
+                </tr>
+                <tr>
+                    <td>등급</td>
+                    <td>${user.grade}</td>
+                    <td>가입일</td>
+                    <td>${user.userDate}</td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>${user.hbd}</td>
+                    <td>포인트</td>
+                    <td>${user.point}</td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td>${user.email}</td>
+                    <td>로그인 횟수</td>
+                    <td>${로그인횟수}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="book_list">최근 예약 목록</p>
+        <table class="book_table">
+            <thead>
+                <tr>
+                    <td>식당명</td>
+                    <td>주소</td>
+                    <td>인원 수</td>
+                    <td>요청사항</td>
+                    <td>예약 일자</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>카츠업</td>
+                    <td>경기도 고양시 마상로 63번길 17</td>
+                    <td>3</td>
+                    <td>여기는 예약시 요청사항 적는 곳</td>
+                    <td>2021-11-12<span class="book_time">18:05:22</span></td>
+                </tr>
+                <tr>
+                    <td>카츠업</td>
+                    <td>서울시 마포구 어쩌구</td>
+                    <td>3</td>
+                    <td>여기는 예약시 요청사항 적는 곳</td>
+                    <td>2021-11-12<span class="book_time">18:05:22</span></td>
+                </tr>
+                <tr>
+                    <td>카츠업</td>
+                    <td>서울시 마포구 어쩌구</td>
+                    <td>3</td>
+                    <td>여기는 예약시 요청사항 적는 곳</td>
+                    <td>2021-11-12<span class="book_time">18:05:22</span></td>
+                </tr>
+                <tr>
+                    <td>카츠업</td>
+                    <td>서울시 마포구 어쩌구</td>
+                    <td>3</td>
+                    <td>여기는 예약시 요청사항 적는 곳</td>
+                    <td>2021-11-12<span class="book_time">18:05:22</span></td>
+                </tr>
+                <tr>
+                    <td>카츠업</td>
+                    <td>서울시 마포구 어쩌구</td>
+                    <td>3</td>
+                    <td>여기는 예약시 요청사항 적는 곳</td>
+                    <td>2021-11-12<span class="book_time">18:05:22</span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="paging_foot">
+                    <td colspan="5">여기는 페이징 처리 하는곳 ajax하기</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <div class="return_btn">
+        <input type="button" value="목록으로 돌아가기" class="btn">
+    </div>
+    <section id="bottom">
+        <div class="wrap">
+            <div class="footer">
+                <div class="footer_inner">
+                    <ul class="footer_link">
+                        <li><a href="#" target="_blank" class="footer_item">이용약관&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">개인정보처리방침&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">책임의 한계와 법적고지&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">회원정보 고객센터</a></li>
+                    </ul>
+                    <div class="footer_copy">
+                        <a href="#" target="_blank">
+                            <img src="../images/projectlogo.png" alt="logo">
+                        </a>
+                        <span class="text">Copyright</span>
+                        <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>

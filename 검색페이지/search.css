@@ -299,3 +299,11 @@
      padding: 0;
      border: 0;
  }
+ 
+ .qqq {
+     border: none;
+ }
+ 
+ .qqq:focus {
+     outline: none;
+ }
