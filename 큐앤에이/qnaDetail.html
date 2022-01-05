@@ -149,6 +149,7 @@
         /* footer시작 */
         
         .footer {
+            margin-top: 450px;
             padding: 80px 0 32px;
         }
         
@@ -371,8 +372,10 @@
         }
         
         .reply_writer {
+            display: inline-block;
             margin-top: 15px;
             margin-bottom: 5px;
+            margin-right: 20px;
             font-size: 20px;
         }
         
@@ -395,7 +398,15 @@
             height: 25px;
             border: rgb(29, 120, 177);
             background-color: rgb(125, 177, 209);
-            color: white
+            color: white;
+        }
+        
+        .delete_reply_btn {
+            width: 120px;
+            height: 24px;
+            border: rgb(29, 120, 177);
+            background-color: rgb(125, 177, 209);
+            color: white;
         }
     </style>
 </head>
@@ -521,6 +532,7 @@
             </div>
             <div class="reply_show">
                 <p class="reply_writer">관리자님의 답글</p>
+                <input type="button" id="delete_reply_btn" class="delete_reply_btn" value="답글 삭제하기">
                 <textarea class="reply_text"></textarea>
             </div>
             <div class="update_btn_box">
