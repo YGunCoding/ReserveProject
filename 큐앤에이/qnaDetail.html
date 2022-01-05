@@ -53,6 +53,14 @@
             list-style: none;
         }
         
+        textarea {
+            resize: none;
+        }
+        
+        textarea:focus {
+            outline: none;
+        }
+        
         a {
             text-decoration: none;
             color: inherit;
@@ -270,7 +278,7 @@
         
         .insert_section {
             width: 1000px;
-            margin: 0 auto;
+            margin: 0 auto 450px;
             height: 600px;
         }
         
@@ -315,6 +323,11 @@
             transition: 0.5s;
         }
         
+        .reply_text:focus {
+            outline: 1px solid lightskyblue;
+            transition: 0.5s;
+        }
+        
         .content_text {
             width: 980px;
             height: 200px;
@@ -330,7 +343,7 @@
         
         .update_btn_box {
             width: 1000px;
-            height: 200px;
+            height: 60px;
             margin-top: 25px;
             text-align: center;
         }
@@ -349,10 +362,46 @@
             font-size: 16px;
             cursor: pointer;
         }
+        
+        .reply_show {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        
+        .reply_writer {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        
+        .reply_text {
+            width: 98%;
+            height: 100px;
+            margin-bottom: 15px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .reply_btn_box {
+            width: 1000px;
+        }
+        
+        .reply_btn {
+            text-align: center;
+            width: 60px;
+            height: 25px;
+            border: rgb(29, 120, 177);
+            background-color: rgb(125, 177, 209);
+            color: white
+        }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="wrap">
             <h1>
@@ -399,39 +448,43 @@
             </ul>
         </div>
     </header>
+
     <div class="accordion">
         <div class="cate quickmenu">
             <span class="menu">
-                <a href="#" class="menulink">Reservation</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Reservation</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="/restaurant/admin/searchPage"> 식당 검색  </a></li>
                 <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
-                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+                <li><a href="#"> 신규 오픈 </a></li>
             </ul>
         </div>
+
         <div class="cate quickmenu">
             <span class="menu"> 
-                <a href="#" class="menulink">Board</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Board</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="/restaurant/notice/selectNoticeList"> 공지사항 </a></li>
                 <li><a href="리뷰"> 리뷰 </a></li>
-                <li><a href="리뷰"> Q&A </a></li>
+                <li><a href="/restaurant/qnaboard/qnalist"> Q&A </a></li>
             </ul>
         </div>
+
         <div class="cate quickmenu">
             <span class="menu">
-                <a href="#" class="menulink">Magazines</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Magazines</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li>다이닝 매거진</li>
+                <li><a href="/restaurant/user/detail">다이닝 매거진</a></li>
             </ul>
         </div>
     </div>
+
     <div class="qna_title">
         <span>Q&A</span>
     </div>
@@ -440,38 +493,53 @@
             <tbody>
                 <tr>
                     <td>번호</td>
-                    <td>24</td>
+                    <td>${qna.qnaNo}</td>
                     <td>조회수</td>
-                    <td>0</td>
+                    <td>${qna.qnaHit}</td>
                 </tr>
                 <tr>
                     <td>작성일</td>
-                    <td>2022-01-04</td>
+                    <td>${qna.qnaDate}</td>
                     <td>최종수정일</td>
-                    <td>2022-01-04</td>
+                    <td>${qna.qnaLastModified}</td>
                 </tr>
                 <tr>
                     <td>작성자</td>
-                    <td colspan="3">wpdbsrjs123</td>
+                    <td colspan="3">${qna.qnaWriter}</td>
                 </tr>
             </tbody>
         </table>
+        <form method="post" id="info_form">
+            <div>
+                <p class="title">제목</p>
+                <input type="hidden" name="qnaNo" value="${qna.qnaNo}">
+                <input type="text" class="title_text" id="qnaTitle" name="qnaTitle" value="${qna.qnaTitle}" readonly>
+            </div>
+            <div>
+                <p class="content">내용</p>
+                <textarea class="content_text" id="qnaContent" name="qnaContent" readonly>${qna.qnaContent}</textarea>
+            </div>
+            <div class="reply_show">
+                <p class="reply_writer">관리자님의 답글</p>
+                <textarea class="reply_text"></textarea>
+            </div>
+            <div class="update_btn_box">
+                <input type="button" value="수정" class="update_btn" id="update_btn">
+                <!-- <button class="update_btn">수정</button>  -->
+                <input type="button" value="삭제" class="delete_btn" id="delete_btn">
+                <input type="button" value="목록" class="list_btn" id="list_btn">
+            </div>
+        </form>
         <div>
-            <p class="title">제목</p>
-            <input type="text" class="title_text">
+            <p class="reply_writer">Q&A 답글 남기기</p>
         </div>
-        <div>
-            <p class="content">내용</p>
-            <textarea class="content_text"></textarea>
-        </div>
-        <div class="update_btn_box">
-            <input type="button" value="수정" class="update_btn">
-            <input type="button" value="삭제" class="delete_btn">
-            <input type="button" value="목록" class="list_btn">
-        </div>
+        <form>
+            <textarea placeholder="내용을 작성해주세요" class="reply_text"></textarea>
+            <div class="reply_btn_box">
+                <button class="reply_btn">등록</button>
+            </div>
+        </form>
     </section>
-
-
     <section id="bottom">
         <div class="wrap">
             <div class="footer">
@@ -484,7 +552,7 @@
                     </ul>
                     <div class="footer_copy">
                         <a href="#" target="_blank">
-                            <img src="../images/projectlogo.png" alt="logo" class="logo_box">
+                            <img src="/restaurant/resources/image/index/projectlogo.png" class="logo_box">
                         </a>
                         <span class="text">Copyright</span>
                         <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>

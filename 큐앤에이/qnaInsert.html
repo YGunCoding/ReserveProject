@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            fnhover();
+            fnQuickMenu();
+
+
+
+        });
+
+        function fnQuickMenu() {
+            var currentPosition = parseInt($(".quickmenu").css("top"));
+            $(window).scroll(function() {
+                var position = $(window).scrollTop();
+                $(".quickmenu").stop().animate({
+                    "top": position + currentPosition + "px"
+                }, 1000);
+            });
+
+        }
+
+        function fnhover() {
+            (function($) {
+                $('.cate ul').hide();
+                $('.cate .menu .subopen').click(function() {
+                    if ($(this).hasClass('active')) {
+                        $(this).parent().next().slideUp('slow');
+                        $(this).removeClass('active');
+                    } else {
+                        $('.accordion').find('.active').parent().next().slideUp('slow');
+                        $('.accordion').find('.active').removeClass('active');
+                        $(this).parent().next().slideDown('slow');
+                        $(this).addClass('active');
+                    }
+                });
+            })(jQuery);
+        }
+    </script>
+    <style>
+        /* 초기화시작 */
+        
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+        
+        textarea {
+            resize: none;
+        }
+        
+        textarea:focus {
+            outline: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            vertical-align: top;
+        }
+        
+        body {
+            font-family: 'nanumsquare';
+        }
+        
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .wrap:after,
+        ul:after,
+        .cl:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        
+        .blind {
+            position: absolute;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+        /* 초기화끝 */
+        /* 헤더시작 */
+        
+        header {
+            height: 120px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: white;
+            border-bottom: 1px solid silver;
+            box-shadow: 0 1px 2px lightgray;
+            margin: 0 auto;
+        }
+        
+        header h1 {
+            padding: 25px 0;
+        }
+        
+        header #gnb {
+            position: absolute;
+            right: 0;
+            top: 50px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        header #gnb li {
+            float: left;
+            margin-right: 20px;
+        }
+        
+        header #gnb li:last-child {
+            margin-right: 0;
+        }
+        /* 헤더끝 */
+        /* 메뉴시작 */
+        
+        .accordion {
+            float: left;
+            margin-left: 150px;
+            margin-top: 200px;
+        }
+        
+        .cate {
+            width: 150px;
+            position: relative;
+            border-style: solid;
+            border-width: 1px 1px 0 1px;
+            border-color: rgb(194, 188, 188);
+            border-radius: 3px
+        }
+        
+        .cate:last-child {
+            border-bottom: 1px solid rgb(230, 224, 224);
+        }
+        
+        .cate .menu {
+            display: block;
+            position: relative;
+            width: 100%;
+            background: rgb(219, 215, 215);
+            height: 80px;
+        }
+        
+        .cate .menu .menulink {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            width: 70%;
+            padding-left: 15px;
+            line-height: 80px;
+            font-weight: 800;
+        }
+        
+        .cate .menu .subopen {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            right: 15px;
+            padding: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            transform: rotate(45deg);
+        }
+        
+        .cate ul li {
+            padding: 5px 10px;
+            font-weight: 500;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        .cate ul li:first-child {
+            padding-top: 20px;
+        }
+        
+        .cate ul li:last-child {
+            padding-bottom: 20px;
+        }
+        
+        .cate ul li a {
+            font-size: 15px;
+        }
+        /* 메뉴끝 */
+        /* footer시작 */
+        
+        .footer {
+            padding: 80px 0 32px;
+        }
+        
+        .footer_link {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            font-weight: 400;
+        }
+        
+        .footer_item {
+            margin: 0 10px;
+        }
+        
+        .footer_copy {
+            width: 553px;
+            margin: 10px auto 0;
+            text-align: center;
+        }
+        
+        .footer_logo {
+            display: inline-block;
+            /* 보여줄 이미지 크기 */
+            width: 70px;
+            height: 15px;
+            background-image: url(../images/projectlogo.png);
+            background-size: 245px 95px;
+            /* 본 이미지 크기 */
+            background-position: 0 -51px;
+        }
+        
+        .footer_copy>.text {
+            color: #888;
+            font-weight: 800;
+        }
+        
+        .footer_copy img {
+            margin-bottom: 10px;
+        }
+        /* 끝 */
+        
+        .qna_comment {
+            margin-top: 250px;
+            width: 500px;
+            margin: 250px auto 150px;
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        .insert_section {
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        
+        .insert_title {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 23px;
+        }
+        
+        .qna_title_box,
+        .qna_writer_box,
+        .qna_content_box {
+            margin-bottom: 20px;
+        }
+        
+        .qna_title,
+        .qna_content,
+        .qna_writer {
+            width: 984px;
+            height: 50px;
+            padding-left: 10px;
+            font-size: 17px;
+        }
+        
+        .qna_title:focus,
+        .qna_content:focus {
+            outline: 1px solid lightskyblue;
+            transition: 0.5s;
+        }
+        
+        .qna_content {
+            padding-top: 10px;
+            height: 300px;
+        }
+        
+        .update_btn_box {
+            width: 1000px;
+            height: 200px;
+            margin-top: 150px;
+            text-align: center;
+            margin: 150px auto 0;
+        }
+        
+        .insert_btn,
+        .list_btn {
+            text-align: center;
+            width: 100px;
+            height: 30px;
+            line-height: 100%;
+            border: none;
+            background-color: rgb(192, 138, 149);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="index.html">
+                    <img src="/이미지/logo.png ">
+                </a>
+            </h1>
+            <ul id="gnb">
+                <li><a href="사용자페이지이동">LOGIN&nbsp;&nbsp;&nbsp;/</a></li>
+                <li><a href="호스트로그인페이지이동">HOSTLOGIN</a></li>
+                <li><a href="회원가입페이지이동">JOIN</a></li>
+                <li><a href="찜목록페이지">FAVORITE</a></li>
+                <li><a href="마이페이지이동">MYPAGE</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="accordion">
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Reservation</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
+                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu"> 
+                <a href="#" class="menulink">Board</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="리뷰"> 리뷰 </a></li>
+                <li><a href="리뷰"> Q&A </a></li>
+            </ul>
+        </div>
+        <div class="cate quickmenu">
+            <span class="menu">
+                <a href="#" class="menulink">Magazines</a>
+                <a href="javascript:void(0);" class="subopen"></a>
+            </span>
+            <ul>
+                <li>다이닝 매거진</li>
+            </ul>
+        </div>
+    </div>
+    <div class="qna_comment">
+        <span>Q&A&nbsp;&nbsp;등록</span>
+    </div>
+    <section class="insert_section">
+        <div class="qna_writer_box">
+            <div>
+                <span class="insert_title">작성자</span>
+            </div>
+            <div>
+                <input type="text" class="qna_writer">
+            </div>
+        </div>
+        <div class="qna_title_box">
+            <div>
+                <span class="insert_title">제목</span>
+            </div>
+            <div>
+                <input type="text" placeholder="제목을 입력하세요" class="qna_title">
+            </div>
+        </div>
+        <div class="qna_content_box">
+            <div>
+                <span class="insert_title">내용</span>
+            </div>
+            <div>
+                <textarea placeholder="내용을 입력하세요" class="qna_content"></textarea>
+            </div>
+        </div>
+    </section>
+
+    <div class="update_btn_box">
+        <input type="button" value="등록" class="insert_btn">
+        <input type="button" value="목록" class="list_btn">
+    </div>
+
+    <section id="bottom">
+        <div class="wrap">
+            <div class="footer">
+                <div class="footer_inner">
+                    <ul class="footer_link">
+                        <li><a href="#" target="_blank" class="footer_item">이용약관&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">개인정보처리방침&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">책임의 한계와 법적고지&nbsp;|</a></li>
+                        <li><a href="#" target="_blank" class="footer_item">회원정보 고객센터</a></li>
+                    </ul>
+                    <div class="footer_copy">
+                        <a href="#" target="_blank">
+                            <img src="../images/projectlogo.png" alt="logo">
+                        </a>
+                        <span class="text">Copyright</span>
+                        <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
