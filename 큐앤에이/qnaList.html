@@ -233,7 +233,7 @@
         }
         
         .search_box {
-            width: 800px;
+            width: 1000px;
             margin: 0 auto 50px;
             text-align: left;
         }
@@ -342,6 +342,17 @@
             text-align: center;
             margin: 0 auto;
         }
+        
+        .column {
+            width: 100px;
+            text-align: center;
+            height: 27px;
+            border: 1px solid lightgray;
+        }
+        
+        .column:focus {
+            outline: none;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -384,6 +395,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="wrap">
             <h1>
@@ -430,46 +442,58 @@
             </ul>
         </div>
     </header>
+
     <div class="accordion">
         <div class="cate quickmenu">
             <span class="menu">
-                <a href="#" class="menulink">Reservation</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Reservation</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li><a href="식당검색페이지"> 식당 검색  </a></li>
+                <li><a href="/restaurant/admin/searchPage"> 식당 검색  </a></li>
                 <li><a href="식당검색페이지"> 할인 되는 식당</a></li>
-                <li><a href="식당검색페이지"> 신규 오픈 </a></li>
+                <li><a href="#"> 신규 오픈 </a></li>
             </ul>
         </div>
+
         <div class="cate quickmenu">
             <span class="menu"> 
-                <a href="#" class="menulink">Board</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Board</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li><a href="공지사항"> 공지사항 </a></li>
+                <li><a href="/restaurant/notice/selectNoticeList"> 공지사항 </a></li>
                 <li><a href="리뷰"> 리뷰 </a></li>
-                <li><a href="리뷰"> Q&A </a></li>
+                <li><a href="/restaurant/qnaboard/qnalist"> Q&A </a></li>
             </ul>
         </div>
+
         <div class="cate quickmenu">
             <span class="menu">
-                <a href="#" class="menulink">Magazines</a>
-                <a href="javascript:void(0);" class="subopen"></a>
-            </span>
+          <a href="#" class="menulink">Magazines</a>
+          <a href="javascript:void(0);" class="subopen"></a>
+      </span>
             <ul>
-                <li>다이닝 매거진</li>
+                <li><a href="/restaurant/user/detail">다이닝 매거진</a></li>
             </ul>
         </div>
     </div>
+
+
+
     <div class="qna_title">
         <span>Q&A</span>
     </div>
     <div class="search_box">
-        <form>
-            <input type="text" class="search_text">
-            <div class="icon_box">
+        <form action="/restaurant/qnaboard/searchQna" id="search_form">
+            <select id="column" name="column" class="column">
+          <option value="" selected>::: 선택 :::</option>
+          <option value="QNA_WRITER">작성자</option>
+          <option value="QNA_TITLE">제목</option>
+          <option value="QNA_CONTENT">내용</option>
+      </select>
+            <input type="text" class="search_text" id="query" name="query">
+            <div class="icon_box" id="search_btn">
                 <i class="fas fa-search" class="search_btn"></i>
             </div>
         </form>
@@ -486,52 +510,71 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="body_td">118</td>
-                    <td>wpdbsrjs123</td>
-                    <td>식당 문의사항</td>
-                    <td>2022-01-04</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <td class="body_td">118</td>
-                    <td>wpdbsrjs123</td>
-                    <td>식당 문의사항</td>
-                    <td>2022-01-04</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <td class="body_td">118</td>
-                    <td>wpdbsrjs123</td>
-                    <td>식당 문의사항</td>
-                    <td>2022-01-04</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <td class="body_td"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="body_td">118</td>
-                    <td>wpdbsrjs123</td>
-                    <td class="test">식당 문의사항</td>
-                    <td>2022-01-04</td>
-                    <td>21</td>
-                </tr>
+                <c:if test="${empty list}">
+                    <tr rowspan="5">
+                        <td colspan="5">등록된 Q&A가 없습니다</td>
+                    </tr>
+                </c:if>
+                <c:if test="${not empty list}">
+                    <tr>
+                        <td class="body_td">${list[0].qnaNo}</td>
+                        <td>${list[0].qnaWriter}</td>
+                        <td>
+                            <a href="/restaurant/qnaboard/updateQnaHit?qnaNo=${list[0].qnaNo}">${list[0].qnaTitle}</a>
+                        </td>
+                        <td>${list[0].qnaDate}</td>
+                        <td>${list[0].qnaHit}</td>
+                    </tr>
+                    <tr>
+                        <td class="body_td">${list[1].qnaNo}</td>
+                        <td>${list[1].qnaWriter}</td>
+                        <td>
+                            <a href="/restaurant/qnaboard/updateQnaHit?qnaNo=${list[1].qnaNo}">${list[1].qnaTitle}</a>
+                        </td>
+                        <td>${list[1].qnaDate}</td>
+                        <td>${list[1].qnaHit}</td>
+                    </tr>
+                    <tr>
+                        <td class="body_td">${list[2].qnaNo}</td>
+                        <td>${list[2].qnaWriter}</td>
+                        <td>
+                            <a href="/restaurant/qnaboard/updateQnaHit?qnaNo=${list[2].qnaNo}">${list[2].qnaTitle}</a>
+                        </td>
+                        <td>${list[2].qnaDate}</td>
+                        <td>${list[2].qnaHit}</td>
+                    </tr>
+                    <tr>
+                        <td class="body_td">${list[3].qnaNo}</td>
+                        <td>${list[3].qnaWriter}</td>
+                        <td>
+                            <a href="/restaurant/qnaboard/updateQnaHit?qnaNo=${list[3].qnaNo}">${list[3].qnaTitle}</a>
+                        </td>
+                        <td>${list[3].qnaDate}</td>
+                        <td>${list[3].qnaHit}</td>
+                    </tr>
+                    <tr>
+                        <td class="body_td">${list[4].qnaNo}</td>
+                        <td>${list[4].qnaWriter}</td>
+                        <td>
+                            <a href="/restaurant/qnaboard/updateQnaHit?qnaNo=${list[4].qnaNo}">${list[4].qnaTitle}</a>
+                        </td>
+                        <td>${list[4].qnaDate}</td>
+                        <td>${list[4].qnaHit}</td>
+                    </tr>
+                </c:if>
             </tbody>
             <tfoot class="paging_foot">
                 <tr class="paging_tr">
-                    <td colspan="5" class="paging_td">페이징처리</td>
+                    <td colspan="5" class="paging_td">${paging}</td>
                 </tr>
             </tfoot>
         </table>
     </div>
-    <div class="btn_box">
-        <input type="button" class="insert_btn" value="작성하기">
-    </div>
+    <c:if test="${not empty loginUser}">
+        <div class="btn_box">
+            <input type="button" class="insert_btn" value="작성하기" id="insert_btn">
+        </div>
+    </c:if>
     <section id="bottom">
         <div class="wrap">
             <div class="footer">
@@ -544,7 +587,7 @@
                     </ul>
                     <div class="footer_copy">
                         <a href="#" target="_blank">
-                            <img src="../images/projectlogo.png" alt="logo" class="logo_box">
+                            <img src="/restaurant/resources/image/index/projectlogo.png" class="logo_box">
                         </a>
                         <span class="text">Copyright</span>
                         <span class="corp" style="font-weight: 800;">&copy; FindTable Corp.</span>
@@ -554,8 +597,7 @@
             </div>
         </div>
     </section>
-
-
 </body>
+
 
 </html>
